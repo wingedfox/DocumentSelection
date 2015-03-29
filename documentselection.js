@@ -60,15 +60,16 @@
           /*
           *  instantiate the module
           */
-          if ('function' == typeof self.module[module]) 
-              self.module[module] = new self.module[module](keys);
+          var mod = DocumentSelection.module[module];
+          if ('function' == typeof mod) 
+              mod = DocumentSelection.module[module] = new mod(keys);
           /*
           *  throw the exception, is method is not implemented
           */
-          if (!self.module[module] || !self.module[module][m])
+          if (!mod || !mod[m])
               throw new Error ('Method \''+m+'\' is not implemented for DocumentSelection \''+module+'\' module.');
 
-          return self.module[module][m].apply(self, arg);
+          return mod[m].apply(self, arg);
       }
       /**
        *  Keeps scrolling on the place for browsers, those don't support this natively
