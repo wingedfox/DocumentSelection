@@ -860,11 +860,14 @@
     
     // exports to multiple environments
     if (typeof define === 'function' && define.amd) { //RequireJS
-        define(function () { return DocumentSelection; });
+    console.log(define)
+        define(function () { return new DocumentSelection; });
     } else if (typeof module !== 'undefined' && module.exports) { //CommonJS
-        module.exports = DocumentSelection;
+    console.log(module)
+        module.exports = new DocumentSelection;
     } else { //browser
-        global.DocumentSelection = DocumentSelection;
+    console.log(global)
+        global.DocumentSelection = new DocumentSelection;
     }
 
 }(this));
