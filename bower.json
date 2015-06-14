@@ -1,0 +1,25 @@
+{
+  "name": "DocumentSelection",
+  "version": "0.1.0",
+  "homepage": "https://github.com/wingedfox/DocumentSelection",
+  "authors": [
+    "Ilya WingedFox Lebedev <ilya@lebedev.net>"
+  ],
+  "description": "Library for operating with the text selection in the plain and rich text controls",
+  "main": "documentselection.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "selection",
+    "contenteditable"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
