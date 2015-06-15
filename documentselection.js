@@ -861,13 +861,10 @@
     
     // exports to multiple environments
     if (typeof define === 'function' && define.amd) { //RequireJS
-    console.log(define)
         define(function () { return new DocumentSelection; });
     } else if (typeof module !== 'undefined' && module.exports) { //CommonJS
-    console.log(module)
         module.exports = new DocumentSelection;
     } else { //browser
-    console.log(global)
         global.DocumentSelection = new DocumentSelection;
     }
 
