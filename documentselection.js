@@ -9,6 +9,8 @@
  */
 (function(global){
 
+    var DOM;
+
     /**
      * @constructor
      */
@@ -861,10 +863,14 @@
     
     // exports to multiple environments
     if (typeof define === 'function' && define.amd) { //RequireJS
-        define(function () { return new DocumentSelection; });
+        define(["dom"], function (dom) {
+            DOM = dom;
+            return new DocumentSelection();
+        });
     } else if (typeof module !== 'undefined' && module.exports) { //CommonJS
         module.exports = new DocumentSelection;
     } else { //browser
+        DOM = global.DOM;
         global.DocumentSelection = new DocumentSelection;
     }
 
