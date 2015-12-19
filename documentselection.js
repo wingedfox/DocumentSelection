@@ -8,9 +8,12 @@
  * @version 1.0.0
  */
 (function(global){
+    var DOM;
+
     //-----------------------------------------------------------------------------------------------------------------
     // RESOLVERS
     //-----------------------------------------------------------------------------------------------------------------
+
     /**
      * Resolver for PlainTextInput
      *
@@ -293,10 +296,15 @@
 
     // exports to multiple environments
     if (typeof define === 'function' && define.amd) { //RequireJS
-        define(function () { return DocumentSelection; });
+        define(["dom", function (dom) {
+            DOM = dom;
+            return DocumentSelection;
+        });
     } else if (typeof module !== 'undefined' && module.exports) { //CommonJS
+        DOM = require('dom');
         module.exports = DocumentSelection;
     } else { //browser
+        DOM = global.DOM;
         global.DocumentSelection = DocumentSelection;
     }
 })(this);
