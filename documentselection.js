@@ -299,7 +299,7 @@
         define(["dom", function (dom) {
             DOM = dom;
             return DocumentSelection;
-        });
+        }]);
     } else if (typeof module !== 'undefined' && module.exports) { //CommonJS
         DOM = require('dom');
         module.exports = DocumentSelection;
