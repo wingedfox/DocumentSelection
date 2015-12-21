@@ -8,6 +8,7 @@
  * @version 1.0.0
  */
 (function(global){
+    var DOM;
 
     /**
      *  Hash of keys, bound to elements
@@ -280,10 +281,15 @@
     
     // exports to multiple environments
     if (typeof define === 'function' && define.amd) { //RequireJS
-        define(function () { return PlainTextInput; });
+        define(["dom"], function (dom) {
+            DOM = dom;
+            return PlainTextInput;
+        });
     } else if (typeof module !== 'undefined' && module.exports) { //CommonJS
+        DOM = require("dom");
         module.exports = PlainTextInput;
     } else { //browser
+        DOM = global.DOM;
         global.DocumentSelection.module["input/plain"] =  PlainTextInput;
     }
 }(this));

@@ -296,10 +296,10 @@
 
     // exports to multiple environments
     if (typeof define === 'function' && define.amd) { //RequireJS
-        define(["dom", function (dom) {
+        define(["dom"], function (dom) {
             DOM = dom;
             return DocumentSelection;
-        }]);
+        });
     } else if (typeof module !== 'undefined' && module.exports) { //CommonJS
         DOM = require('dom');
         module.exports = DocumentSelection;
