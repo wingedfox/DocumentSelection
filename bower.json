@@ -1,12 +1,16 @@
 {
   "name": "DocumentSelection",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/wingedfox/DocumentSelection",
   "authors": [
     "Ilya WingedFox Lebedev <ilya@lebedev.net>"
   ],
   "description": "Library for operating with the text selection in the plain and rich text controls",
-  "main": "documentselection.js",
+  "main": [
+    "documentselection.js",
+    "input/plain.js",
+    "input/rich.js"
+  ],
   "moduleType": [
     "amd"
   ],
